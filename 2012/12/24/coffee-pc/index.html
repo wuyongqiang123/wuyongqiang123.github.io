@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/5 | 人贩子的博客</title>
+  <title>生产者-消费者模型的coffeescript实现 | 人贩子的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日常学习与兴趣交流">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="人贩子的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="这两天一直在看coffeescript相关的东西，也帮一个朋友搞了个生产者-消费者模型的C语言实现。想到还没用coffeescript真正意义上写过程序，那就尝试做一下吧。 其实《CoffeeScript小书》是暑假实习时就买了，一直比较向往着函数式编程却拖延了很久没行动起来。小书只有几十页，本是github上一个开源的项目，我喜欢这种轻巧的文字。语法部分看下来，再看下类与继承，只花了半天的时间，">
+<meta name="keywords" content="js,coffeescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生产者-消费者模型的coffeescript实现">
+<meta property="og:url" content="http://yoursite.com/2012/12/24/coffee-pc/index.html">
 <meta property="og:site_name" content="人贩子的博客">
-<meta property="og:description" content="日常学习与兴趣交流">
+<meta property="og:description" content="这两天一直在看coffeescript相关的东西，也帮一个朋友搞了个生产者-消费者模型的C语言实现。想到还没用coffeescript真正意义上写过程序，那就尝试做一下吧。 其实《CoffeeScript小书》是暑假实习时就买了，一直比较向往着函数式编程却拖延了很久没行动起来。小书只有几十页，本是github上一个开源的项目，我喜欢这种轻巧的文字。语法部分看下来，再看下类与继承，只花了半天的时间，">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-05-14T03:08:55.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人贩子的博客">
-<meta name="twitter:description" content="日常学习与兴趣交流">
+<meta name="twitter:title" content="生产者-消费者模型的coffeescript实现">
+<meta name="twitter:description" content="这两天一直在看coffeescript相关的东西，也帮一个朋友搞了个生产者-消费者模型的C语言实现。想到还没用coffeescript真正意义上写过程序，那就尝试做一下吧。 其实《CoffeeScript小书》是暑假实习时就买了，一直比较向往着函数式编程却拖延了很久没行动起来。小书只有几十页，本是github上一个开源的项目，我喜欢这种轻巧的文字。语法部分看下来，再看下类与继承，只花了半天的时间，">
   
     <link rel="alternative" href="/atom.xml" title="人贩子的博客" type="application/atom+xml">
   
@@ -160,71 +161,207 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-coffee-pc" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-14T02:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/hello-world/">ESTabBarController_swift</a>
+    <h1 class="article-title" itemprop="name">
+      生产者-消费者模型的coffeescript实现
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2012/12/24/coffee-pc/" class="archive-article-date">
+  	<time datetime="2012-12-24T15:51:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2012-12-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这两天一直在看coffeescript相关的东西，也帮一个朋友搞了个生产者-消费者模型的C语言实现。想到还没用coffeescript真正意义上写过程序，那就尝试做一下吧。</p>
+<p>其实《CoffeeScript小书》是暑假实习时就买了，一直比较向往着函数式编程却拖延了很久没行动起来。小书只有几十页，本是github上一个开源的项目，我喜欢这种轻巧的文字。语法部分看下来，再看下类与继承，只花了半天的时间，而且心情非常愉悦，然后就可以开始我菜鸟的第一次试飞了。</p>
+<p>生产者-消费者模型没什么好说的了，就是读写共享缓冲区，pv操作控制是否冲突。更多的就是冲着coffeescript来的。下面是一些凌乱但自认为有思考价值的记录，或许后续我会继续写一些coffeescript的学习笔记，再做深入的研究。</p>
+<p>##demo，可尝试点击“生产”“消费”按钮</p>
+<a id="more"></a>
+<p><iframe src="/assets/demo/coffee_pc_demo/pro-con.html" width="780" height="336" scrolling="no"></iframe> ##<strong>litten如是想：</strong> + 我一定要学一门，至少一门函数式风格编程语言，没有太深远的想法，就觉得它就是我的菜 + 这个程序是66行的coffeescript代码，最后编译后得到了122行的js代码，说明编程效率提升显著 + 括号，方括号，花括号，还有逗号有时候会多烦人，特别是使用过ExtJs的人，而coffeescript可以没有 + 用法简洁的jquery在coffeescript里面会更简洁 + 关于coffeescript的循环，它不推荐你使用for循环，而是使用“推导”，暴露在底层的循环只有while语法 + 事件绑定时，使用=&gt;可以免去js上下文切换this的麻烦 + coffeescript的数组迭代方法非常的酷，三言两语说不清 + javascript会是下一个JVM吗？ + 站在产品的角度，我认为coffeescript这名字太长了-_-!</p>
+<p>##附上源码</p>
+<p>N = 10</p>
+<p>class ProCon<br>data:<br>mutex:1<br>empty:N<br>full:0<br>front:0<br>rear:0<br>buf: []<br>init:-&gt;<br>i = 0<br>while i&lt;N<br>newDom = $(‘<div class="bufBox"><div class="bufCover">‘+i+’</div>‘+i+’</div>‘)<br>$(‘#buf’).append(newDom)<br>@data.buf.push ‘e’<br>i++<br>$(‘#produce’).click =&gt;<br>@producer()<br>$(‘#consume’).click =&gt;<br>@consumer()<br>p:(num)-&gt;<br>return –num<br>v:(num)-&gt;<br>return ++num<br>produceItem:-&gt;<br>$(‘</p><p class="desPro">生产了产品</p>‘).insertBefore $(“#des p:first”)<br>return ‘m’<br>consumeItem:-&gt;<br>$(‘<p class="desCon">消费了产品</p>‘).insertBefore $(“#des p:first”)<br>enterItem:(item) -&gt;<br>@data.front = (@data.front+1)%N<br>@data.buf[@data.front] = item;<br>str = “存入产品<a href="mailto:#{@data.buf" target="_blank" rel="noopener">#{@data.buf</a>[@data.front]}到缓冲区<a href="mailto:#{@data.front" target="_blank" rel="noopener">#{@data.front</a>}”<br>$(“<p class="desPro">#{str}</p>“).insertBefore $(“#des p:first”)<br>$($(‘.bufCover’)[@data.front]).animate<br>“height”:”50px”<br>removeItem:-&gt;<br>@data.rear = (@data.rear + 1) % N;<br>@data.buf[@data.rear] = ‘e’;<br>str = “取出产品<a href="mailto:#{@data.buf" target="_blank" rel="noopener">#{@data.buf</a>[@data.rear]}从缓冲区<a href="mailto:#{@data.rear" target="_blank" rel="noopener">#{@data.rear</a>}”<br>$(“<p class="desCon">#{str}</p>“).insertBefore $(“#des p:first”)<br>$($(‘.bufCover’)[@data.rear]).animate<br>“height”:”0px”<br>producer:-&gt;<br>if @data.full==N<br>$(“<p class="desSpe">缓冲区已全满</p>“).insertBefore $(“#des p:first”)<br>return<br>item = @produceItem()<br>@data.empty = @p(@data.empty)<br>@data.mutex = @p(@data.mutex)<br>@enterItem(item)<br>@data.mutex = @v(@data.mutex)<br>@data.full = @v(@data.full)<br>consumer:-&gt;<br>if @data.empty==N<br>$(“<p class="desSpe">缓冲区已空</p>“).insertBefore $(“#des p:first”)<br>return<br>@data.full = @p(@data.full)<br>@data.mutex = @p(@data.mutex)<br>@removeItem()<br>@data.mutex = @v(@data.mutex)<br>@data.empty = @v(@data.empty)<br>@consumeItem()<p></p>
+<p>procon = new ProCon<br>procon.init();</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">swift</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/swift//" class="article-tag-list-link color1">swift</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">coffeescript</a>
         		</li>
       		
 		</ul>
 	</div>
 
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2012/12/24/coffee-pc/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2013/12/02/my-first-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          postName
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="coffee-pc"></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cysX3aGWt",
+        conf: "prod_1dcda447175aada96edcdb7e412338fa"
+    });
+</script>
+
+  
+
+  
+
+  
 
 
           </div>
@@ -247,8 +384,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
